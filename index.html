@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1F1B18">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meubles Ouedfen</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600&family=Cormorant+Garamond:wght@600;700&family=Jost:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#FFFDF8;--ink:#2E2018;--card:#FFFFFF;--line:#E3D8C6;--wood:#6B4528;--acc:#B85A0C;--sand:rgba(246,238,220,.75);--ar:#B08B5E;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1B1612;--ink:#F1E8DA;--card:#26201A;--line:#3B3027;--wood:#E2B98A;--acc:#F0923A;--sand:rgba(48,38,29,.75);--ar:#7A6244}}
+:root[data-theme="dark"]{--bg:#1B1612;--ink:#F1E8DA;--card:#26201A;--line:#3B3027;--wood:#E2B98A;--acc:#F0923A;--sand:rgba(48,38,29,.75);--ar:#7A6244}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 'Jost',system-ui,sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--wood);margin:0 0 12px;line-height:1.15}
+h1{font-size:clamp(34px,6vw,58px)}h2{font-size:clamp(30px,4vw,42px)}
+a{color:inherit;text-decoration:none}
+.bg{position:fixed;inset:0;z-index:-1;filter:blur(1.4px);opacity:.75;pointer-events:none;-webkit-mask-image:linear-gradient(to right,#000 0,rgba(0,0,0,.3) 22%,rgba(0,0,0,.3) 78%,#000 100%);mask-image:linear-gradient(to right,#000 0,rgba(0,0,0,.3) 22%,rgba(0,0,0,.3) 78%,#000 100%)}
+.w{padding:60px 5vw}.s{background:var(--sand)}
+header{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:16px 5vw}
+.logo{font:700 30px 'Cormorant Garamond',Georgia,serif;color:var(--wood)}
+nav{display:flex;flex-wrap:wrap;gap:18px;font-size:15px;font-weight:600}
+.b{display:inline-block;background:#1F1B18;color:#fff;padding:13px 24px;font:600 15px 'Jost',sans-serif;border:0;cursor:pointer;min-height:44px}
+.b.o{background:none;color:var(--acc);border:1px solid var(--acc)}
+.hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.hero>div{flex:1 1 300px}
+.k{color:var(--acc);font-weight:600;font-size:14px;margin:0 0 8px}
+.arch{width:min(300px,80vw);height:400px;margin:auto;border-radius:150px 150px 0 0;border:6px solid #F2C9A0;background:#E9D7BE;display:flex;align-items:flex-end;justify-content:center;padding:20px;text-align:center;font-size:14px;color:#4A3220}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.ph{height:200px;background:#E3CEB0;color:#4A3220;display:flex;align-items:flex-end;padding:14px;font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);padding:24px}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:18px}
+.st div{border:1px solid var(--line);background:var(--card);padding:12px}
+.st .on{border-color:var(--acc);background:var(--acc);color:#fff}
+input,select,textarea{font:inherit;padding:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:100%;min-height:44px}
+footer{background:#1F1B18;color:#EADFCB;padding:44px 5vw;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}
+footer .logo{color:#F0923A}
+#adm{position:fixed;inset:0;z-index:9;background:var(--bg);overflow:auto;padding:calc(20px + env(safe-area-inset-top,0px)) 5vw calc(40px + env(safe-area-inset-bottom,0px));display:none}
+#adm label{display:block;margin:12px 0 4px;font-weight:600;font-size:14px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:8px}
+[dir="rtl"] body{font-family:'Cairo',system-ui,sans-serif}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] .logo{font-family:'Amiri',Georgia,serif;line-height:1.35}
+.lg{background:none;border:1px solid var(--acc);color:var(--acc);padding:8px 16px;min-height:44px;cursor:pointer;font:600 14px 'Jost','Cairo',sans-serif}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.chip{background:var(--card);border:1px solid var(--line);color:var(--ink);padding:8px 16px;min-height:44px;cursor:pointer;font:600 14px 'Jost','Cairo',sans-serif}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+details{background:var(--card);border:1px solid var(--line);padding:14px 18px;margin-top:10px}summary{cursor:pointer;font-weight:600;min-height:28px}
+.fm{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:24px}.fm label{font-weight:600;font-size:14px}.fm .full{grid-column:1/-1}
+.bar{position:fixed;left:0;right:0;bottom:0;display:flex;background:#1F1B18;padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}.bar a{flex:1;text-align:center;padding:14px 4px;color:#fff;font-weight:600;min-height:48px}
+body{padding-bottom:64px}@media(min-width:700px){.bar{display:none}body{padding-bottom:0}}
+#lb{position:fixed;inset:0;z-index:8;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}#lb img{max-width:100%;max-height:100%}
+</style>
+<meta name="description" content="Meubles Ouedfen, atelier de menuiserie à Bizerte : dressings, cuisines, chambres, buffets et mobilier sur mesure. Devis par téléphone ou en ligne.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FurnitureStore","name":"Meubles Ouedfen","address":{"@type":"PostalAddress","streetAddress":"306 cité el Hana","addressLocality":"Bizerte","addressCountry":"TN"},"telephone":["+21621771779","+21621368804"]}</script>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><svg width="100%" height="100%" aria-hidden="true"><defs><pattern id="ar" width="90" height="90" patternUnits="userSpaceOnUse"><g fill="none" style="stroke:var(--ar)" stroke-width="1.4"><rect x="22" y="22" width="46" height="46"/><rect x="22" y="22" width="46" height="46" transform="rotate(45 45 45)"/><circle cx="45" cy="45" r="12"/><circle cx="0" cy="0" r="16"/><circle cx="90" cy="0" r="16"/><circle cx="0" cy="90" r="16"/><circle cx="90" cy="90" r="16"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#ar)"/></svg></div>
+<header id="hd"></header>
+<main id="app"></main>
+<div id="lb" role="dialog" aria-label="Photo"><img alt=""></div>
+<div id="adm"></div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CATS=['Dressings','Cuisines','Chambres','Buffets et salons','Bar et sur mesure'];
+const STEPS=['Reçue','Validée','En fabrication','Finition','Prête','Livrée'];
+const I={fr:{nav:['Nos créations','Réalisations','Commander','Suivi','Contact'],cta:'Demander un devis',kick:'Atelier de menuiserie · Bizerte',b1:'Découvrir nos créations',b2:'Appeler l’atelier',uh:'Classique et moderne',up:'Du mobilier traditionnel aux lignes contemporaines, chaque pièce est faite sur mesure.',cats:CATS,rh:'Nos réalisations',ch:'Commander, simplement',c1:'Par téléphone',c1p:'Un simple appel suffit.',c2:'Autre numéro',c2p:'Pour joindre l’atelier.',c3:'À l’atelier',c3p:'Venez voir les finitions et les essences de bois.',sh:'Suivez votre commande',sp:'Saisissez votre numéro de commande (essai : OU-1001).',ph:'N° de commande',sb:'Suivre',nf:'Aucune commande trouvée.',steps:STEPS,adm:'Espace admin',lg:'العربية',ph1:'[PHOTO]',nm:'Meubles Ouedfen'},
+ar:{nav:['إبداعاتنا','أعمالنا','اطلب الآن','تتبع الطلب','اتصل بنا'],cta:'اطلب عرض سعر',kick:'ورشة نجارة · بنزرت',b1:'اكتشف إبداعاتنا',b2:'اتصل بالورشة',uh:'الكلاسيكي والعصري',up:'من الأثاث التقليدي إلى الخطوط المعاصرة، كل قطعة تُصنع حسب الطلب.',cats:['خزائن ملابس','مطابخ','غرف نوم','بوفيهات وصالونات','بار وأثاث حسب الطلب'],rh:'أعمالنا',ch:'اطلب بكل سهولة',c1:'عبر الهاتف',c1p:'مكالمة واحدة تكفي.',c2:'رقم آخر',c2p:'للتواصل مع الورشة.',c3:'في الورشة',c3p:'تعال وشاهد اللمسات النهائية وأنواع الخشب.',sh:'تتبّع طلبك',sp:'أدخل رقم طلبك (للتجربة: OU-1001).',ph:'رقم الطلب',sb:'تتبّع',nf:'لا يوجد طلب بهذا الرقم.',steps:['تم الاستلام','تمت الموافقة','قيد التصنيع','اللمسات الأخيرة','جاهز','تم التسليم'],adm:'فضاء المسيّر',lg:'Français',ph1:'[صورة]',nm:'أثاث وادفن'}};
+let L='fr';try{L=localStorage.getItem('mol')||'fr'}catch(e){}
+Object.assign(I.fr,{fa:'Tout',pr:'Comment ça marche',ps:['Contact','Étude et devis','Fabrication et suivi'],pd:['Appelez-nous ou envoyez votre demande.','Nous étudions votre projet et vous proposons un devis.','Votre meuble est fabriqué dans notre atelier et vous suivez l’avancement.'],tt:'Ils nous font confiance',fq:'Questions fréquentes',qh:'Demander un devis',qn:'Votre nom',qt:'Votre téléphone',qy:'Type de meuble',qm:'Décrivez votre projet (dimensions, matériaux…)',send:'Envoyer la demande',ok:'Demande enregistrée. Pour être servi plus vite, envoyez-la aussi par WhatsApp :',wa:'Envoyer par WhatsApp',hr:'Horaires',mp:'Voir sur la carte',call:'Appeler',dev:'Devis',empty:'Les photos des réalisations apparaîtront ici.'});
+Object.assign(I.ar,{fa:'الكل',pr:'كيف نعمل',ps:['التواصل','الدراسة وعرض السعر','التصنيع والمتابعة'],pd:['اتصل بنا أو أرسل طلبك.','ندرس مشروعك ونقترح عليك عرض سعر.','يُصنع أثاثك في ورشتنا وتتابع تقدّم العمل.'],tt:'آراء زبائننا',fq:'أسئلة شائعة',qh:'اطلب عرض سعر',qn:'اسمك',qt:'هاتفك',qy:'نوع الأثاث',qm:'صف مشروعك (الأبعاد، المواد…)',send:'إرسال الطلب',ok:'تم تسجيل طلبك. للحصول على رد أسرع أرسله أيضاً عبر واتساب:',wa:'إرسال عبر واتساب',hr:'ساعات العمل',mp:'عرض على الخريطة',call:'اتصل',dev:'عرض سعر',empty:'ستظهر صور الأعمال هنا.'});
+const DEF={hero_t:'Un art du bois, entre tradition tunisienne et lignes modernes',hero_p:'Dressings, cuisines, chambres, buffets et mobilier sur mesure, fabriqués dans notre atelier de Bizerte.',tel1:'+216 21 771 779',tel2:'+216 21 368 804',addr:'306 cité el Hana, Bizerte',mail:'meubleouedfen@gmail.com',mgr:'Abdel Aziz Ouedfen · Gérant',hero_t_ar:'فنّ الخشب بين الأصالة التونسية والخطوط العصرية',hero_p_ar:'خزائن ملابس، مطابخ، غرف نوم، بوفيهات وأثاث حسب الطلب، يُصنع في ورشتنا ببنزرت.',addr_ar:'306 حي الهناء، بنزرت',mgr_ar:'عبد العزيز وادفن · المسيّر',gal:[],tm:[],faq:[{q:'Comment demander un devis ?',a:'Appelez l’atelier ou remplissez le formulaire de cette page, en précisant le type de meuble et les dimensions.',q_ar:'كيف أطلب عرض سعر؟',a_ar:'اتصل بالورشة أو املأ النموذج في هذه الصفحة مع ذكر نوع الأثاث والأبعاد.'},{q:'Fabriquez-vous sur mesure ?',a:'Oui : dressings, cuisines, chambres, buffets et bar, selon vos besoins.',q_ar:'هل تصنعون حسب الطلب؟',a_ar:'نعم: خزائن ملابس، مطابخ، غرف نوم، بوفيهات وبار حسب حاجتك.'},{q:'Comment suivre ma commande ?',a:'Saisissez votre numéro de commande dans la section Suivi de ce site.',q_ar:'كيف أتابع طلبي؟',a_ar:'أدخل رقم طلبك في قسم تتبّع الطلب في هذا الموقع.'}],pg:[],qt:[],wa:'21621771779',hours:'[Horaires à compléter]',fb:'',ig:'',ph:{},orders:[{id:'OU-1001',client:'Client exemple',prod:'Dressing sur mesure',st:2}]};
+let D;
+try{D={...DEF,...JSON.parse(localStorage.getItem('mo')||'{}')}}catch(e){D={...DEF}}
+D.ph=D.ph||{};['gal','tm','faq','pg','qt'].forEach(k=>D[k]=D[k]||[]);
+function save(){try{localStorage.setItem('mo',JSON.stringify(D))}catch(e){const m=$('msg');if(m)m.textContent='Mémoire pleine : utilisez des photos plus petites.'}}
+const tel=s=>'tel:'+s.replace(/[^+\d]/g,'');
+const bg=k=>D.ph[k]?`background:url('${D.ph[k]}') center/cover`:'';
+const lab=k=>D.ph[k]?'':I[L].ph1;
+const G=(o,k)=>L==='ar'&&o[k+'_ar']?o[k+'_ar']:o[k];
+let GF=-1;
+const f=k=>L==='ar'&&D[k+'_ar']?D[k+'_ar']:D[k];
+function R(){const T=I[L],y=scrollY,ph=h=>`<span dir="ltr">${esc(h)}</span>`,wa='https://wa.me/'+D.wa;
+document.documentElement.lang=L;document.documentElement.dir=L==='ar'?'rtl':'ltr';
+const ids=['univers','galerie','devis','suivi','contact'];
+$('hd').innerHTML=`<a class="logo" href="#">${T.nm}</a><nav>${ids.map((h,i)=>`<a href="#${h}">${T.nav[i]}</a>`).join('')}${D.pg.map((p,i)=>`<a href="#p${i}">${esc(G(p,'t')||'')}</a>`).join('')}</nav><div class="row"><button class="lg" id="lg">${T.lg}</button><a class="b" href="#devis">${T.cta}</a></div>`;
+const gl=D.gal.map((g,i)=>[g,i]).filter(([g])=>GF<0||g.c===GF);
+const tile=(g,i)=>`<div class="ph" data-z="${i}" role="button" tabindex="0" style="height:240px;cursor:zoom-in;${g.img?`background:url('${g.img}') center/cover`:''}">${g.t?`<span style="background:rgba(255,253,248,.9);padding:4px 10px">${esc(g.t)}</span>`:''}</div>`;
+$('app').innerHTML=`
+<section class="w hero"><div><p class="k">${T.kick}</p><h1>${esc(f('hero_t'))}</h1><p>${esc(f('hero_p'))}</p>
+<div class="row"><a class="b" href="#devis">${T.cta}</a><a class="b o" href="${tel(D.tel1)}">${T.b2}</a></div></div>
+<div><div class="arch" style="${bg('hero')}">${lab('hero')}</div></div></section>
+<section class="w s" id="univers"><h2>${T.uh}</h2><p>${T.up}</p>
+<div class="g">${T.cats.map((c,i)=>`<div class="ph" style="${bg('c'+i)}">${esc(c)}${D.ph['c'+i]?'':' · '+T.ph1}</div>`).join('')}</div></section>
+<section class="w" id="galerie"><h2>${T.rh}</h2>
+<div class="chips"><button class="chip${GF<0?' on':''}" data-f="-1">${T.fa}</button>${T.cats.map((c,i)=>`<button class="chip${GF===i?' on':''}" data-f="${i}">${esc(c)}</button>`).join('')}</div>
+<div class="g">${gl.length?gl.map(([g,i])=>tile(g,i)).join(''):`<p>${T.empty}</p>`}</div></section>
+<section class="w s"><h2>${T.pr}</h2><div class="g">${T.ps.map((t,i)=>`<div class="card"><p class="k">${i+1}</p><h3>${t}</h3><p style="margin:0">${T.pd[i]}</p></div>`).join('')}</div></section>
+${D.tm.length?`<section class="w"><h2>${T.tt}</h2><div class="g">${D.tm.map(t=>`<div class="card"><p>${esc(G(t,'txt')||'')}</p><b>${esc(G(t,'n')||'')}</b></div>`).join('')}</div></section>`:''}
+<section class="w s"><h2>${T.fq}</h2>${D.faq.map(q=>`<details><summary>${esc(G(q,'q')||'')}</summary><p>${esc(G(q,'a')||'')}</p></details>`).join('')}</section>
+${D.pg.map((p,i)=>`<section class="w" id="p${i}"><h2>${esc(G(p,'t')||'')}</h2><p style="white-space:pre-line">${esc(G(p,'b')||'')}</p></section>`).join('')}
+<section class="w s" id="devis"><h2>${T.ch}</h2>
+<div class="g"><div class="card"><h3>${T.c1}</h3><p>${T.c1p}</p><a class="b" href="${tel(D.tel1)}">${ph(D.tel1)}</a></div>
+<div class="card"><h3>${T.c2}</h3><p>${T.c2p}</p><a class="b" href="${tel(D.tel2)}">${ph(D.tel2)}</a></div>
+<div class="card"><h3>${T.c3}</h3><p><b>${esc(f('addr'))}</b></p><a class="b o" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(D.addr)}" target="_blank" rel="noopener">${T.mp}</a></div></div>
+<h3 style="margin-top:36px">${T.qh}</h3>
+<form id="qf" class="fm"><label>${T.qn}<input id="qn" required></label><label>${T.qt}<input id="qt" type="tel" required></label>
+<label class="full">${T.qy}<select id="qy">${T.cats.map((c,i)=>`<option value="${i}">${esc(c)}</option>`).join('')}</select></label>
+<label class="full">${T.qm}<textarea id="qm" rows="4"></textarea></label>
+<div class="full"><button class="b" type="submit">${T.send}</button><div id="qo" role="status" style="margin-top:12px"></div></div></form></section>
+<section class="w" id="suivi"><h2>${T.sh}</h2><p>${T.sp}</p>
+<div class="row"><input id="q" placeholder="${T.ph}" aria-label="${T.ph}" style="max-width:320px"><button class="b" id="qb">${T.sb}</button></div><div id="res"></div></section>
+<footer id="contact"><div><div class="logo">${T.nm}</div><p style="margin:6px 0 0">${esc(f('mgr'))}<br>${esc(f('addr'))}<br>${esc(D.mail)}<br>${T.hr} : ${esc(G(D,'hours')||'')}</p>${D.fb?`<p><a href="${esc(D.fb)}" rel="noopener">Facebook</a> ${D.ig?` · <a href="${esc(D.ig)}" rel="noopener">Instagram</a>`:''}</p>`:D.ig?`<p><a href="${esc(D.ig)}" rel="noopener">Instagram</a></p>`:''}</div>
+<div><button class="b" id="ab" style="background:#F0923A;color:#1F1B18">${T.adm}</button></div></footer>
+<div class="bar"><a href="${tel(D.tel1)}">${T.call}</a><a href="${wa}" target="_blank" rel="noopener">WhatsApp</a><a href="#devis">${T.dev}</a></div>`;
+$('lg').onclick=()=>{L=L==='ar'?'fr':'ar';try{localStorage.setItem('mol',L)}catch(e){}R()};
+document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{GF=+b.dataset.f;R()});
+document.querySelectorAll('[data-z]').forEach(d=>d.onclick=()=>{const g=D.gal[+d.dataset.z];if(g&&g.img){$('lb').querySelector('img').src=g.img;$('lb').style.display='flex'}});
+$('lb').onclick=()=>{$('lb').style.display='none'};
+$('qf').onsubmit=e=>{e.preventDefault();const v=k=>$(k).value.trim(),q={d:new Date().toLocaleDateString(),n:v('qn'),tel:v('qt'),type:T.cats[+$('qy').value],msg:v('qm'),st:0};D.qt.push(q);save();const m=`${T.nm}\n${q.n} · ${q.tel}\n${q.type}\n${q.msg}`;$('qo').innerHTML=`<p>${T.ok}</p><a class="b" href="${wa}?text=${encodeURIComponent(m)}" target="_blank" rel="noopener">${T.wa}</a>`;$('qf').reset()};
+$('qb').onclick=()=>{const v=$('q').value.trim().toLowerCase(),o=D.orders.find(x=>x.id.toLowerCase()===v);
+$('res').innerHTML=o?`<div class="card" style="margin-top:16px"><b>${esc(o.id)}</b> · ${esc(o.prod)}<div class="st">${T.steps.map((s,i)=>`<div class="${i<=o.st?'on':''}">${i+1}. ${s}</div>`).join('')}</div></div>`:`<p>${T.nf}</p>`};
+$('ab').onclick=()=>{const a=$('adm');a.style.display='block';a.dir='ltr';a.innerHTML='<div class="row" style="justify-content:space-between"><h2 style="margin:0">Espace admin</h2><button class="b" id="x">Fermer</button></div><label for="pw" style="display:block;margin:20px 0 4px;font-weight:600">Code administrateur (démo : ouedfen)</label><input id="pw" type="password" style="max-width:320px"><div class="row"><button class="b" id="go">Entrer</button></div><p id="pe" role="alert"></p>';$('x').onclick=()=>{a.style.display='none'};$('go').onclick=()=>{if($('pw').value==='ouedfen')A();else $('pe').textContent='Code incorrect.'}};
+scrollTo(0,y)}
+function resize(f,cb){const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const s=Math.min(1,900/i.width),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',.8))};i.src=r.result};r.readAsDataURL(f)}
+function A(){const a=$('adm'),y=a.scrollTop;a.style.display='block';a.dir='ltr';
+const F=[['hero_t','Titre principal'],['hero_p','Texte d’accueil'],['tel1','Téléphone 1'],['tel2','Téléphone 2'],['wa','N° WhatsApp (chiffres seulement)'],['addr','Adresse'],['mail','E-mail'],['mgr','Gérant'],['hours','Horaires'],['fb','Lien Facebook'],['ig','Lien Instagram'],['hero_t_ar','Titre (arabe)'],['hero_p_ar','Texte d’accueil (arabe)'],['addr_ar','Adresse (arabe)'],['mgr_ar','Gérant (arabe)'],['hours_ar','Horaires (arabe)']];
+const P=[['hero','Photo principale'],...CATS.map((c,i)=>['c'+i,c])];
+const LE=(k,fs,t)=>`<h3 style="margin-top:28px">${t}</h3>`+D[k].map((o,i)=>`<div class="card" style="margin-top:8px">${fs.map(([f,l])=>`<label>${l}<input data-l="${k}.${i}.${f}" value="${esc(o[f]||'')}"></label>`).join('')}<button class="b o" data-d="${k}.${i}" style="margin-top:10px">Supprimer</button></div>`).join('')+`<button class="b o" data-a="${k}" style="margin-top:10px">Ajouter</button>`;
+const QS=['Nouveau','Contacté','Terminé'];
+a.innerHTML=`<div class="row" style="justify-content:space-between"><h2 style="margin:0">Tableau de bord</h2><button class="b" id="x">Fermer</button></div>
+<p>Version de démonstration : les changements sont enregistrés sur cet appareil seulement.</p><p id="msg" role="alert"></p>
+<div class="g">${[['Commandes',D.orders.length],['Demandes de devis',D.qt.length],['Photos galerie',D.gal.length],['Témoignages',D.tm.length]].map(([l,n])=>`<div class="card"><b style="font-size:28px">${n}</b><br>${l}</div>`).join('')}</div>
+<h3 style="margin-top:28px">Demandes de devis reçues</h3>${D.qt.map((q,i)=>`<div class="card" style="margin-top:8px"><b>${esc(q.n)}</b> · <a href="${tel(q.tel)}">${esc(q.tel)}</a> · ${esc(q.type)} · ${esc(q.d)}<p>${esc(q.msg)}</p><div class="row"><select data-qs="${i}" aria-label="Statut">${QS.map((s,j)=>`<option value="${j}"${j===q.st?' selected':''}>${s}</option>`).join('')}</select><button class="b o" data-d="qt.${i}">Supprimer</button></div></div>`).join('')||'<p>Aucune demande pour le moment.</p>'}
+<h3 style="margin-top:28px">Commandes</h3><div id="ol"></div><div class="row"><input id="np" placeholder="Produit commandé" aria-label="Produit commandé" style="max-width:260px"><button class="b o" id="na">Ajouter une commande</button></div>
+<h3 style="margin-top:28px">Textes et coordonnées</h3>${F.map(([k,l])=>`<label>${l}<input data-k="${k}" value="${esc(D[k]||'')}"></label>`).join('')}
+<h3 style="margin-top:28px">Photos principales</h3>${P.map(([k,l])=>`<label>${l}<input type="file" accept="image/*" data-p="${k}"></label>`).join('')}
+<h3 style="margin-top:28px">Galerie des réalisations</h3><label>Ajouter une photo<input type="file" accept="image/*" id="ga"></label>${D.gal.map((g,i)=>`<div class="card row" style="margin-top:8px"><img src="${g.img}" alt="" width="64" height="64" style="object-fit:cover"><input data-l="gal.${i}.t" value="${esc(g.t||'')}" placeholder="Titre" aria-label="Titre" style="flex:1 1 140px"><select data-gc="${i}" aria-label="Catégorie">${CATS.map((c,j)=>`<option value="${j}"${g.c===j?' selected':''}>${c}</option>`).join('')}</select><button class="b o" data-d="gal.${i}">Supprimer</button></div>`).join('')}
+${LE('tm',[['n','Nom du client'],['txt','Témoignage'],['n_ar','Nom (arabe)'],['txt_ar','Témoignage (arabe)']],'Témoignages')}
+${LE('faq',[['q','Question'],['a','Réponse'],['q_ar','Question (arabe)'],['a_ar','Réponse (arabe)']],'Questions fréquentes')}
+${LE('pg',[['t','Titre de la page'],['b','Contenu'],['t_ar','Titre (arabe)'],['b_ar','Contenu (arabe)']],'Pages ajoutées (apparaissent dans le menu)')}
+<div class="row" style="margin-top:28px"><button class="b o" id="rs">Tout réinitialiser</button></div>`;
+const S=(q,fn)=>a.querySelectorAll(q).forEach(fn);
+const O=()=>{$('ol').innerHTML=D.orders.map((o,i)=>`<div class="card row" style="margin-top:8px"><b>${esc(o.id)}</b><span>${esc(o.prod)}</span><select data-o="${i}" aria-label="Statut">${STEPS.map((s,j)=>`<option value="${j}"${j===o.st?' selected':''}>${s}</option>`).join('')}</select><button class="b o" data-d="orders.${i}">Supprimer</button></div>`).join('');
+$('ol').querySelectorAll('select').forEach(s=>s.onchange=()=>{D.orders[s.dataset.o].st=+s.value;save()});$('ol').querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{D.orders.splice(+b.dataset.d.split('.')[1],1);save();A()})};O();
+S('[data-k]',e=>e.oninput=()=>{D[e.dataset.k]=e.value;save();R()});
+S('[data-l]',e=>e.oninput=()=>{const[k,i,f]=e.dataset.l.split('.');D[k][i][f]=e.value;save();R()});
+S('[data-d]',e=>{if(!e.dataset.d.startsWith('orders'))e.onclick=()=>{const[k,i]=e.dataset.d.split('.');D[k].splice(+i,1);save();R();A()}});
+S('[data-a]',e=>e.onclick=()=>{D[e.dataset.a].push({});save();A()});
+S('[data-gc]',e=>e.onchange=()=>{D.gal[e.dataset.gc].c=+e.value;save();R()});
+S('[data-qs]',e=>e.onchange=()=>{D.qt[e.dataset.qs].st=+e.value;save()});
+S('[data-p]',e=>e.onchange=()=>{if(e.files[0])resize(e.files[0],u=>{D.ph[e.dataset.p]=u;save();R()})});
+$('ga').onchange=e=>{if(e.target.files[0])resize(e.target.files[0],u=>{D.gal.push({img:u,c:0,t:''});save();R();A()})};
+$('na').onclick=()=>{const p=$('np').value.trim();if(p){D.orders.push({id:'OU-'+(1001+D.orders.length),client:'',prod:p,st:0});save();$('np').value='';O()}};
+$('rs').onclick=()=>{if($('rs').dataset.c){localStorage.removeItem('mo');location.reload()}else{$('rs').dataset.c=1;$('rs').textContent='Confirmer : tout effacer'}};
+$('x').onclick=()=>{a.style.display='none'};
+a.scrollTop=y}
+R();
+if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+</script>
+</body>
+</html>
